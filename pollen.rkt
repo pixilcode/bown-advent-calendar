@@ -34,10 +34,11 @@
 
 (define (day number . content)
   (let ([day-id (format "day-~a" number)]
-        [close-button '(form ((method "dialog")) (button "×"))])
+        [close-button '(button ((class "close-day")) "×")])
     `(section ((class "day") (id ,day-id))
               (h2 ,(format "Day ~a" number))
-              ,@content)))
+              (button ((class "open-day")) "Click me!")
+              (dialog ,close-button ,@content))))
 
 
 (define para (default-tag-function 'p))

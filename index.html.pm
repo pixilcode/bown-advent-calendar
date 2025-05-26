@@ -329,3 +329,21 @@
     Most of all, have a very Merry Christmas!
   }
 }
+
+◊script{
+  for (let i = 1; i <= 25; i++) {
+    const section = document.getElementById(`day-${i}`)
+
+    const openButton = section.querySelector('.open-day')
+    const closeButton = section.querySelector('.close-day')
+    const dialog = section.querySelector('dialog')
+
+    openButton.addEventListener('click', () => {
+      dialog.showModal()
+    })
+
+    closeButton.addEventListener('click', () => {
+      dialog.close()
+    })
+  }
+}
