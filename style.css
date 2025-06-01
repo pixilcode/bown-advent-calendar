@@ -1,15 +1,19 @@
 :root {
+  /* fonts */
+  --cursive: "Merienda", cursive;
+  --serif: "Alegreya", serif;
+  
   /* colors */
   --green: #187740;
   --red: #c44536;
   --white: #ffffff;
   
   --body-bkg: color-mix(in oklch, var(--green), white 75%);
+  --body-stripe: color-mix(in oklch, var(--green), white 62.5%);
   --day-bkg: color-mix(in oklch, var(--red), black 25%);
   --day-txt: var(--white);
   --card-color: var(--white);
 }
-
 
 * {
   margin: 0;
@@ -18,13 +22,19 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   row-gap: 2rem;
   column-gap: 5vw;
   
+  align-items: center;
+  justify-content: center;
+  
   padding: 5vw;
   
+  background-image: linear-gradient(0deg, transparent 50%, var(--body-stripe) 50%);
+  background-size: 32px 32px;
   background-color: var(--body-bkg);
 }
 
@@ -43,34 +53,52 @@ section {
     calc(var(--unit) * 2.5);
   
   grid-template-rows:
-    var(--unit)
-    var(--unit)
-    calc(var(--unit) * 20);
+    calc(var(--unit) * 4)
+    calc(var(--unit) * 4)
+    calc(var(--unit) * 17.5)
+    calc(var(--unit) * 2.5);
     
   .card {
     grid-row: 2 / 4;
     grid-column: 2 / 3;
     
     background-color: var(--card-color);
-    transition: background-color 0.25s;
+    transition: translate 0.25s;
+    
+    box-shadow: 0px 0px 8px 2px grey;
   }
   
   button.open-day {
-    grid-row: 3 / 4;
+    grid-row: 3 / 5;
     grid-column: 1 / 4;
 
     background: var(--day-bkg);
     border: none;
+    
     font-size: 10rem;
+    font-family: var(--cursive);
     color: var(--day-txt);
+    text-align: center;
 
     /* for the card behind */
     z-index: 1;
-    margin-top: 5rem;
   }
   
   &:has(button.open-day:hover, .card:hover) .card {
-    grid-row: 1 / 4;
-    background-color: green;
+    translate: 0 calc(var(--unit) * -2);
+  }
+}
+
+dialog {
+  margin: auto;
+  padding: min(2.5rem, 5vw);
+  width: min(50rem, 75vw);
+  
+  h2 {
+    font-family: var(--cursive);
+  }
+  
+  p {
+    font-family: var(--serif);
   }
 }
