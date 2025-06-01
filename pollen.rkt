@@ -36,7 +36,9 @@
   (let ([day-id (format "day-~a" number)]
         [close-button '(button ((class "close-day")) "×")])
     `(section ((class "day") (id ,day-id))
-              (button ((class "open-day")) ,(number->string number))
+              (div ((class "card-holder"))
+                   (div ((class "card")))
+                   (button ((class "open-day")) ,(number->string number)))
               (dialog ,close-button
                       (h2 ,(format "December ~a" number))
                       ,@content))))
