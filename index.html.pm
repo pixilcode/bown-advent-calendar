@@ -335,10 +335,15 @@
     const section = document.getElementById(`day-${i}`)
 
     const openButton = section.querySelector('.open-day')
+    const card = section.querySelector('.card')
     const closeButton = section.querySelector('.close-day')
     const dialog = section.querySelector('dialog')
 
     openButton.addEventListener('click', () => {
+      dialog.showModal()
+    })
+
+    card.addEventListener('click', () => {
       dialog.showModal()
     })
 

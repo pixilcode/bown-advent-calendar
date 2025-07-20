@@ -5,6 +5,24 @@
 
 (provide (all-defined-out))
 
+(define (day number . content)
+  (let ([day-id (format "day-~a" number)]
+        [close-button '(button ((class "close-day")) "×")])
+    `(section ((class "day") (id ,day-id))
+              (div ((class "card-holder"))
+                   (div ((class "card")))
+                   (button ((class "open-day")) ,(number->string number)))
+              (dialog
+               (div ((class "day-content"))
+                    ,close-button
+                    (h2 ,(format "December ~a" number))
+                    ,@content)))))
+
+
+(define para (default-tag-function 'p))
+(define question (default-tag-function 'p #:class "question"))
+(define action (default-tag-function 'p #:class "action"))
+
 (define (scripture-url book chapter verses)
   (let* ((collection (match book
                        [(or "Isaiah") "ot"]
@@ -32,22 +50,6 @@
             verse-span
             first-verse)))
 
-(define (day number . content)
-  (let ([day-id (format "day-~a" number)]
-        [close-button '(button ((class "close-day")) "×")])
-    `(section ((class "day") (id ,day-id))
-              (div ((class "card-holder"))
-                   (div ((class "card")))
-                   (button ((class "open-day")) ,(number->string number)))
-              (dialog ,close-button
-                      (h2 ,(format "December ~a" number))
-                      ,@content))))
-
-
-(define para (default-tag-function 'p))
-(define question (default-tag-function 'p #:class "question"))
-(define action (default-tag-function 'p #:class "action"))
-
 (define (scripture book chapter verses)
   (let* ([url (scripture-url book chapter verses)]
          [first-verse (car verses)]
@@ -57,4 +59,4 @@
                           (format "~a" first-verse))]
 
          )
-    `(p ((class "scripture")) "Read " (a ((href ,url)) ,(format "~a ~a:~a" book chapter verse-range)))))
+    `(p ((class "scripture")) "Read " (a ((href ,url)) ,(format "~a ~a:~a" book chapter verse-range)) ".")))

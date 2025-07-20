@@ -12,7 +12,10 @@
 </head>
 
 <body>
-	◊(->html doc #:splice? #t)
+	<h1 class="title">Bown Advent Calendar</h1>
+	<div class="cards-container">
+		◊(->html doc #:splice? #t)
+	</div>
 </body>
 
 </html>
