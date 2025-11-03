@@ -115,7 +115,7 @@ dialog {
 .day-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  row-gap: 1.5rem;
+  row-gap: 1rem;
   
   .close-day {
     grid-column-start: 2;
@@ -142,5 +142,12 @@ dialog {
   a, a:visited {
     color: green;
     text-decoration: underline;
+  }
+  
+  .icon {
+    height: 1rem;
+    float: left;
+    padding-top: 0.25rem;
+    padding-right: 0.25rem;
   }
 }
