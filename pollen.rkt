@@ -22,14 +22,14 @@
 (define para (default-tag-function 'p))
 
 (define (question . content)
-    (let ([icon '(img ((class "icon") (src "/images/question-icon.svg") (alt "Question mark icon")))])
+    (let ([icon '(img ((class "icon") (src "images/question-icon.svg") (alt "Question mark icon")))])
     `(p
         ((class "question"))
         ,icon
         ,@content)))
 
 (define (action . content)
-    (let ([icon '(img ((class "icon") (src "/images/star-icon.svg") (alt "Star icon")))])
+    (let ([icon '(img ((class "icon") (src "images/star-icon.svg") (alt "Star icon")))])
     `(p
         ((class "action"))
         ,icon
@@ -70,7 +70,7 @@
          [verse-range (if last-verse
                           (format "~a–~a" first-verse last-verse)
                           (format "~a" first-verse))]
-         [icon '(img ((class "scripture icon") (src "/images/book-icon.svg") (alt "Scriptures icon")))])
+         [icon '(img ((class "scripture icon") (src "images/book-icon.svg") (alt "Scriptures icon")))])
     `(p ((class "scripture"))
         ,icon
         "Read " (a ((href ,url)) ,(format "~a ~a:~a" book chapter verse-range)) ".")))
