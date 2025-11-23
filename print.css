@@ -1,0 +1,49 @@
+@media print {
+  :root {
+    --base-size: 8pt;
+  }
+  
+  body {
+    padding: 0 5vw;
+    background: none;
+    font-size: var(--base-size);
+  }
+  
+  h1, .card-holder, .close-day {
+    display: none;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    gap: 0;
+    
+    align-items: start;
+  }
+  
+  .day-content {
+    row-gap: var(--base-size);
+    
+    a, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .icon {
+      height: var(--base-size);
+      padding-top: calc(var(--base-size) / 4);
+      padding-right: calc(var(--base-size) / 4);
+    }
+  }
+  
+  
+  
+  dialog {
+    display: block;
+    position: static;
+    width: 40vw;
+    padding: 1.25vw;
+  }
+}

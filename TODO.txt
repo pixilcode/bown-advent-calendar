@@ -2,4 +2,4 @@
 - [ ] Determine which cards require prep before hand, which cards require extra time, and which cards require materials
 - [ ] In HTML, make a "tree" view (which shows the advent calendar background) and a "list" view (which just lists the days)
 - [x] Add favicon for the website
-- [ ] Make the calendar printable for Samuel
+- [x] Make the calendar printable for Samuel
