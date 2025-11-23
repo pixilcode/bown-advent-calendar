@@ -1,4 +1,5 @@
 - [x] Convert text files to HTML (or maybe data structures with extra information that can then be converted to HTML?)
 - [ ] Determine which cards require prep before hand, which cards require extra time, and which cards require materials
 - [ ] In HTML, make a "tree" view (which shows the advent calendar background) and a "list" view (which just lists the days)
-- [ ] Maybe have special formatting for questions, actions, scriptures, etc.
+- [x] Add favicon for the website
+- [ ] Make the calendar printable for Samuel
