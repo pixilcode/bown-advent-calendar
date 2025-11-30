@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bown Advent Calendar</title>
+	<title>Christmas Advent Calendar</title>
 	<link rel="icon" href="favicon.png" type="image/png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<h1 class="title">Bown Advent Calendar</h1>
+	<h1 class="title">Christmas Advent Calendar</h1>
 	<div class="cards-container">
 		◊(->html doc #:splice? #t)
 	</div>
