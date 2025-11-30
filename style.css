@@ -8,6 +8,7 @@
   --red: #c44536;
   --white: #ffffff;
   
+  --header-txt: color-mix(in oklch, var(--green), black 25%);
   --body-bkg: color-mix(in oklch, var(--green), white 75%);
   --body-stripe: color-mix(in oklch, var(--green), white 62.5%);
   --day-bkg: color-mix(in oklch, var(--red), black 25%);
@@ -40,7 +41,7 @@ body {
   font-family: var(--cursive);
   font-size: 4rem;
   text-align: center;
-  
+  color: var(--header-txt);
   /* TODO: more work styling this */
 }
 
